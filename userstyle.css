@@ -1,0 +1,43 @@
+/* ==UserStyle==
+@name           NHK Easy Print
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    Print style NHK News Easy articles, only active when printing
+@author         Joshua Woehlke
+==/UserStyle== */
+
+@-moz-document domain("www3.nhk.or.jp") {
+    @media print {
+        aside#nhkheader { display: none; }
+        .easy-header { display: none; }
+        body #wrapper #content .l-container {
+            width: auto;
+            padding: unset;
+            margin: auto;
+        }
+        body #wrapper #content .l-main {
+            width: auto;
+            max-width: none;
+            float: none;
+        }
+        body #wrapper #content article.article-main figure { display: none; }
+        body #wrapper #content article.article-main h1.article-main__title {
+            font-size: 20px;
+        }
+        body #wrapper #content div.article-main__tools { display: none; }
+        body #wrapper #content #easy-wrapper div.article-main__body {
+            line-height: 3.8;
+        }
+        body #wrapper #content #easy-wrapper div.article-main__body img {
+            display: none;
+        }
+        body #wrapper #content div.article-main__colors { display: none; }
+        body #wrapper #content nav.article-main__links { display: none; }
+        body #wrapper #content .l-sidebar {
+            display: none;
+        }
+        body #wrapper #content section.enquete { display: none; }
+        aside#nhkfooter { display: none; }
+        aside#bottom_optout_announce { display: none; }
+    }
+}
