@@ -16,7 +16,7 @@
         div#js-regular-news-wrapper { display: none !important; }
         div.article-top-tool { display: none !important; }
         article a.disaster-banner { display: none !important; }
-
+        
         /* unwrap padding and margin constraints */
         main, article, #easy-wrapper div {
             margin: 0px !important;
@@ -27,7 +27,22 @@
         div.l-container {
             display: block !important;
         }
-
+        
+        /* print scaling styles */
+        html {
+            font-size: 20px;
+        }
+        article {
+            margin: auto !important;
+            max-width: 44rem !important;
+        }
+        p, h1 {
+            text-wrap: wrap;
+            page-break-inside: avoid;
+            word-break: keep-all;
+            overflow-wrap: normal;
+        }
+        
         /* hide images and video -- comment to allow */
         div.article-figure { display: none; }
         article img { display: none !important; }
