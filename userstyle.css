@@ -8,36 +8,28 @@
 
 @-moz-document domain("www3.nhk.or.jp") {
     @media print {
-        aside#nhkheader { display: none; }
-        .easy-header { display: none; }
-        body #wrapper #content .l-container {
-            width: auto;
-            padding: unset;
-            margin: auto;
+        /* hide page elements */
+        header { display: none !important; }
+        aside { display: none !important; }
+        main > section { display: none !important; }
+        div.article-share { display: none !important; }
+        div#js-regular-news-wrapper { display: none !important; }
+        div.article-top-tool { display: none !important; }
+        article a.disaster-banner { display: none !important; }
+
+        /* unwrap padding and margin constraints */
+        main, article, #easy-wrapper div {
+            margin: 0px !important;
+            padding: 0px !important;
+            width: auto !important;
+            max-width: 100% !important;
         }
-        body #wrapper #content .l-main {
-            width: auto;
-            max-width: none;
-            float: none;
+        div.l-container {
+            display: block !important;
         }
-        body #wrapper #content article.article-main figure { display: none; }
-        body #wrapper #content article.article-main h1.article-main__title {
-            font-size: 20px;
-        }
-        body #wrapper #content div.article-main__tools { display: none; }
-        body #wrapper #content #easy-wrapper div.article-main__body {
-            line-height: 3.8;
-        }
-        body #wrapper #content #easy-wrapper div.article-main__body img {
-            display: none;
-        }
-        body #wrapper #content div.article-main__colors { display: none; }
-        body #wrapper #content nav.article-main__links { display: none; }
-        body #wrapper #content .l-sidebar {
-            display: none;
-        }
-        body #wrapper #content section.enquete { display: none; }
-        aside#nhkfooter { display: none; }
-        aside#bottom_optout_announce { display: none; }
+
+        /* hide images and video -- comment to allow */
+        div.article-figure { display: none; }
+        article img { display: none !important; }
     }
 }
